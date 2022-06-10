@@ -1,6 +1,7 @@
 import ast
 import os.path
 
+import h5py
 import librosa
 import numpy as np
 import soundfile
@@ -446,7 +447,7 @@ class AFFECTNET_Dataset(Dataset):
 
     def __getitem__(self, idx):
         # path = os.path.join(self.root + self.list_filepath[idx])
-        # image = cv2.imread(path)[..., ::-1]
+        # image = cv2.imread((self.list_image_id[idx])[..., ::-1]
         image = Image.open(self.list_image_id[idx]).convert('RGB')
 
         labels_conti = [(self.arousal[idx] + 10) / 20.0,
@@ -470,6 +471,39 @@ class AFFECTNET_Dataset(Dataset):
         sample = {'images': self.transforms(image),
                   'labels_conti': labels_conti,
                   # 'landmark': landmark,
+                  'labels': expression}
+
+        return sample
+
+
+class AFFECTNET_hdf5(Dataset):
+    def __init__(self, hdf5_file_name, transform):
+        self.hdf5_file_name = hdf5_file_name
+        self.hf = h5py.File(self.hdf5_file_name, "r")
+        self.list_image_id = self.hf['imgs'][:]
+        self.labels_ex = self.hf['labels'][:]
+        self.arousal = self.hf['arousal'][:]
+        self.valence = self.hf['valence'][:]
+        self.hf.close()
+
+        self.transforms = transform
+
+    def __len__(self):
+        return len(self.list_image_id)
+
+    def __getitem__(self, idx):
+        # path = os.path.join(self.root + self.list_filepath[idx])
+        # image = cv2.imread(path)[..., ::-1]
+        # image = Image.open(self.list_image_id[idx]).convert('RGB')
+        image = self.list_image_id[idx]
+
+        labels_conti = [(self.arousal[idx] + 10) / 20.0,
+                        (self.valence[idx] + 10) / 20.0]
+        labels_conti = np.asarray(labels_conti)
+        expression = np.asarray(self.labels_ex[idx])
+
+        sample = {'images': self.transforms(image),
+                  'labels_conti': labels_conti,
                   'labels': expression}
 
         return sample
