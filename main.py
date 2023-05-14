@@ -74,18 +74,18 @@ def setup_AffectNet(args):
     # train_dataset = AFFECTNET_hdf5(train_data, transform=train_transform, task=args.task)
     # valid_dataset = AFFECTNET_hdf5(valid_data, transform=valid_transform, task=args.task)
     #
-    # train_loader = DataLoader(dataset=train_dataset,
-    #                           batch_size=args.batch_size,
-    #                           num_workers=args.num_workers,
-    #                           pin_memory=False,
-    #                           shuffle=True,
-    #                           drop_last=False)
-    # valid_loader = DataLoader(dataset=valid_dataset,
-    #                           batch_size=args.batch_size,
-    #                           num_workers=args.num_workers,
-    #                           pin_memory=False,
-    #                           shuffle=False,
-    #                           drop_last=False)
+    train_loader = DataLoader(dataset=train_dataset,
+                              batch_size=args.batch_size,
+                              num_workers=args.num_workers,
+                              pin_memory=False,
+                              shuffle=True,
+                              drop_last=False)
+    valid_loader = DataLoader(dataset=valid_dataset,
+                              batch_size=args.batch_size,
+                              num_workers=args.num_workers,
+                              pin_memory=False,
+                              shuffle=False,
+                              drop_last=False)
 
     return train_loader, valid_loader
 
