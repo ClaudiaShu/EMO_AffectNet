@@ -1,6 +1,6 @@
 # EMO_AffectNet
 
-This is the evaluation code for our Paper "Revisiting Self-Supervised Contrastive Learning for Facial Expression Recognition".
+This is the evaluation code for our Paper "Revisiting Self-Supervised Contrastive Learning for Facial Expression Recognition". For the main repository, please refer to the [main repo](https://github.com/ClaudiaShu/SSL-FER).
 
 ## Code overview
 
