@@ -6,7 +6,6 @@ This is the evaluation code for our Paper "Revisiting Self-Supervised Contrastiv
 
 ```
 .    
-├── models 
 ├── models 			
 │   ├── model_MLP.py                    # MLP layer              
 │   └── model_RES.py                    # backbone ResNet model      
