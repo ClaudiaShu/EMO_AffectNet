@@ -1,11 +1,4 @@
-# ------------------------------------------------------------------------------
-# The famous data set:cats vs dogs is used in this example. The data set contains
-# 12500 dog pictures and 12500 cat pictures. All the images are shuffled randomly
-# and 20000 images are used to train, 5000 images are used to valid. The images
-# can be resized to different sizes but the size of the .hdf5 file differs very
-# far depending on the size of the images. The file is 1.14G when the size of the
-# images is (128,128) and 4.57G for (256,256), 18.3G for (512,512).
-# ------------------------------------------------------------------------------
+
 
 ########################## first part: prepare data ###########################
 from random import shuffle
@@ -13,7 +6,6 @@ import glob
 import os
 
 import pandas as pd
-
 
 
 shuffle_data = True  # shuffle the addresses
