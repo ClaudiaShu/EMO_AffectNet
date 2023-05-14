@@ -29,11 +29,9 @@ def take_anno(dir_anno, number_id):
 
 if __name__ == '__main__':
 
-    # dir_images = '/data/users/ys221/data/ABAW/origin_faces/'
-
-    dir_images = '/data/AffectNet/val_set/images/'
-    dir_anno = '/data/AffectNet/val_set/annotations/'
-    save_dir = '/ys221/data/AffectNet/csv/'
+    dir_images = '/data/AffectNet/val_set/images/' # The dir where you save the AffectNet images
+    dir_anno = '/data/AffectNet/val_set/annotations/' # The dir where you save the AffectNet annotations
+    save_dir = '/ys221/data/AffectNet/csv/' # Output csv file
 
     isFile = os.path.isfile(save_dir)
     if not isFile:
