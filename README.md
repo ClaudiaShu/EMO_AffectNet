@@ -10,7 +10,8 @@ This is the evaluation code for our Paper "Revisiting Self-Supervised Contrastiv
 │   ├── model_MLP.py                    # MLP layer              
 │   └── model_RES.py                    # backbone ResNet model      
 ├── LFW.py                              # main program for LFW evaluation
-├── AffectNet_create_csv.py.py          # preprocess dataset
+├── AffectNet_create_csv.py             # process dataset into csv
+├── AffectNet_prep.py                   # Affectnet preparation
 ├── data_aug.py                         # applied image augmentation
 ├── data_loader.py                      # dataloader for AffectNet
 └── main.py                             # main program for Affectnet evaluation
