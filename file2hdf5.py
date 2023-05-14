@@ -1,4 +1,4 @@
-
+# Thanks to: https://github.com/feiyuhuahuo/create-a-hdf5-data-set-for-deep-learning
 
 ########################## first part: prepare data ###########################
 from random import shuffle
