@@ -26,9 +26,11 @@ python LFW.py
 To evaluate with AffectNet, please run:
 ```commandline
 python main.py 
+--task # Choose the task you want to evaluate, 'exp' for expression classification and 'va' for valence and arousal recognition
+--model_dir # pre-trained model file
 ```
 
-For AffectNet, we support two different kinds of data inputs - csv and hdf5. Please convert the csv files with `file2hdf5.py` and uncomment below script in `main.py` if you want to train with hdf5. 
+For AffectNet, we support two different kinds of data inputs - csv and hdf5. Preprocess the dataset with `AffectNet_prep.py`. If you want to train with hdf5, please convert the csv files with `file2hdf5.py` and uncomment below script in `main.py`. 
 
 ```python
 train_data = "/data2/yshu21/data/AffectNet/cache/AffectNet_train.hdf5"
