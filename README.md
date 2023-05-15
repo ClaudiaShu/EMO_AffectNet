@@ -28,7 +28,7 @@ To evaluate with AffectNet, please run:
 python main.py 
 ```
 
-For AffectNet, we support two different kinds of data inputs - csv and hdf5. Please convert the csv files with `file2hdf5.py` and uncomment below script in `main.py` if you want to train with hdf5.
+For AffectNet, we support two different kinds of data inputs - csv and hdf5. Please convert the csv files with `file2hdf5.py` and uncomment below script in `main.py` if you want to train with hdf5. 
 
 ```python
 train_data = "/data2/yshu21/data/AffectNet/cache/AffectNet_train.hdf5"
@@ -36,3 +36,4 @@ valid_data = "/data2/yshu21/data/AffectNet/cache/AffectNet_valid.hdf5"
 train_dataset = AFFECTNET_hdf5(train_data, transform=train_transform, task=args.task)
 valid_dataset = AFFECTNET_hdf5(valid_data, transform=valid_transform, task=args.task)
 ```
+The AffectNet dataset can be accessed upon successful application through [the official webpage](http://mohammadmahoor.com/affectnet/).
