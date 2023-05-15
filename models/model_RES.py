@@ -57,14 +57,6 @@ class RES_SSL(nn.Module):
         elif module=='resnet50':
             self.pretrain = torchvision.models.resnet50(pretrained=False, num_classes=dim).cuda()
             model_state_dict = dir
-            # model_state_dict = '/data/users/ys221/data/models/model_voxceleb_img_simCLR/May25_multihard_img/checkpoint_0150.pth.tar' # Train on Voceleb with time & neg
-            # model_state_dict = '/data2/yshu21/log/simCLR/VoxCeleb/runs/resnet50_Aff/checkpoint_0235.pth.tar' # Train on Aff with time & neg
-            # model_state_dict = '/data/users/ys221/data/models/model_voxceleb_img_simCLR/May16_18-49-06_ic_xiao/checkpoint_0020.pth.tar' # Train with voxceleb with ori simclr
-            # model_state_dict = '/data2/yshu21/logging/simCLR/Aff2_img/runs/May25_15-29-33_fuhe.doc.ic.ac.uk/checkpoint_0045.pth.tar' # Train with Aff2 with ori simclr
-            # model_state_dict = '/mnt/d/Data/Yuxuan/logging/simCLR/VoxCeleb_img/runs/resnet50_voxceleb1_time/checkpoint_0030.pth.tar'
-            # model_state_dict = '/mnt/d/Data/Yuxuan/logging/simCLR/VoxCeleb_img/runs/resnet50_voxceleb1s_img/checkpoint_0090.pth.tar'
-            # model_state_dict = "/mnt/d/Data/Yuxuan/logging/simCLR/VoxCeleb_img/runs/resnet50_voxceleb/checkpoint_0020.pth.tar"
-
         elif module=='resnet101':
             self.pretrain = torchvision.models.resnet101(pretrained=False, num_classes=dim).cuda()
             model_state_dict = '/data/users/ys221/data/models/model_voxceleb_img_simCLR/May17_00-21-33_ic_xiao/checkpoint_0010.pth.tar'
